@@ -40,6 +40,10 @@ int main() {
     char message[1024]; //  1mb message
     while(true)
     {
+        if(message[0] == '#')
+        {
+            break;
+        }
         memset(message, 0, sizeof(message));
         recv(clientSocket, message, sizeof(message), 0);
         std::cout<<"Client:  " << message << std::endl;
